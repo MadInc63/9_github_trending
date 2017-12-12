@@ -31,12 +31,17 @@ if __name__ == '__main__':
         repo_open_issues = get_open_issues_amount(repo['owner']['login'],
                                                   repo['name'])
         print('--------------------------------------------------------------')
-        print("Repository owner: {owner}\nRepository name: {name}"
-              "\nURL: {repo_url}\nOpen issues: {issues}"
-              .format(owner=repo['owner']['login'],
-                      name=repo['name'],
-                      repo_url='{owners_html_url}/{repo_name}'
-                               .format(
-                               owners_html_url=repo['owner']['html_url'],
-                               repo_name=repo['name']),
-                      issues=repo_open_issues))
+        print(
+            "Repository owner: {owner}\n"
+            "Repository name: {name}\n"
+            "URL: {repo_url}\n"
+            "Open issues: {issues}".format(
+                owner=repo['owner']['login'],
+                name=repo['name'],
+                repo_url='{owners_html_url}/{repo_name}'.format(
+                    owners_html_url=repo['owner']['html_url'],
+                    repo_name=repo['name']
+                ),
+                issues=repo_open_issues
+            )
+        )

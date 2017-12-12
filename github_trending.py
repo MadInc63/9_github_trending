@@ -12,14 +12,14 @@ def get_trending_repositories(top_size):
         'sort': 'stars',
         'order': 'desc'
     }
-    responce = requests.get(git_hub_url, search_params)
-    repository_list = responce.json()['items']
+    response = requests.get(git_hub_url, search_params)
+    repository_list = response.json()['items']
     return repository_list
 
 
 def get_open_issues_amount(repo_owner, repo_name):
     issues_url = "https://api.github.com/repos/{owner}/{repo}/issues".format(
-                  owner=repo_owner, repo=repo_name)
+        owner=repo_owner, repo=repo_name)
     response = requests.get(issues_url)
     return len(response.json())
 
